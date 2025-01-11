@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #031224, #1a5276);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #041f42;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #041f42;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #00ff99;
+    margin-right: 15px;
+}
+
+.feature-description h3 {
+    font-size: 1.5rem;
+}
+
+.ai-integration {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #0b3d91;
+    border-radius: 10px;
+}
+
+.ai-integration button {
+    background: #00ff99;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #041f42;
+    transition: background 0.3s ease;
+}
+
+.ai-integration button:hover {
+    background: #00cc7a;
+}
+
+.hidden {
+    display: none;
+}
+
+#chatbot-window {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#chat-input {
+    width: 80%;
+    max-width: 600px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#chat-output {
+    width: 80%;
+    max-width: 600px;
+    background: #041f42;
+    color: #00ff99;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: left;
+    word-wrap: break-word;
+}

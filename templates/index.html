@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+   <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* navbar section  */
+
+.navbar {
+    padding: 20px;
+    background: linear-gradient(to right, #a640b4,#da2958);
+}
+
+.navbar .navbar-toggler {
+    color: #fff !important;
+    background: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    outline: none;
+    border: none;
+}
+
+.navbar #navbarNav {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navbar .navbar-brand {
+    color: #f1f1f1;
+    font-size: 30px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+.navbar .navbar-brand i {
+    font-size: 25px;
+   
+    background: #FFA500;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+.navbar .collapse {
+    background: linear-gradient(to right, #b03ba2,#da2958);
+}
+
+.navbar .dropdown-menu{
+    width: 12px;
+}
+
+.navbar .dropdown-menu li a{
+    color: #1c456d;
+    font-size: 15px;
+}
+
+.navbar ul li .bi{
+    background: #fff;
+    color: #1c456d;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+.navbar ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-right: 40px;
+}
+
+.navbar ul li a:hover {
+    color: #FFA500;
+}
+
+.name{
+    font-size: 30px;
+    background-color: #2B547E;
+    color: #FFA500;
+    padding: 50px;
+}
+
+/* hero section  */
+
+.hero-section {
+    padding: 20px;
+    background: linear-gradient(to right, #a640b4,#da2958);
+}
+
+.hero-section .text-content {
+    margin-top: 150px;
+}
+
+.hero-section h1 {
+    font-size: 60px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.hero-section p {
+    margin-top: 30px;
+    color: #d1d1d1;
+}
+
+.hero-section button {
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: #FFA500;
+    height: 50px;
+    width: 170px;
+}
+
+.hero-section button:hover {
+    border: 1px solid #FFA500;
+    background: #2B547E;
+}
+
+.hero-section button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero-section img {
+    height: 600px;
+    width: 1000px;
+}
+
+/* services section  */
+
+.services-section {
+    padding: 100px;
+    background-color: #fbfbfb;
+}
+
+
+
+.services-section .services .row1 {
+    margin-bottom: 40px;
+}
+
+.services-section .services .card {
+    border: none;
+    border-radius: 15px;
+    width: 280px;
+    height: 320px;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.services-section .services .card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
+    background: #f0f0f0;
+}
+
+
+.services-section .services .card:hover {
+    background: linear-gradient(to right, #a640b4,#da2958);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.services-section .services .card:hover h4 {
+    color: #fff;
+}
+
+.services-section .services .card:hover p {
+    color: #d1d1d1;
+}
+
+.services-section .services .card h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 25px;
+}
+
+.services-section .services .card p {
+    font-size: 15px;
+    color: #777;
+    margin-top: 20px;
+}
+
+.services-section .text-content {
+    margin-top: 80px;
+}
+
+.services-section .text-content hr {
+    height: 5px;
+    background-color: #333;
+    border: none;
+}
+
+.services-section .text-content h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #FFA500;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.services-section .text-content h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: #1c456d;
+}
+
+.services-section .text-content p {
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: 30px;
+    color: #555;
+}
+
+.services-section .text-content button {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #2B547E;
+    height: 50px;
+    width: 170px;
+}
+
+.services-section .text-content button:hover {
+    background-color: #fff;
+    border: 2px solid #2B547E;
+    color: #2B547E;
+}
+
+/* about section  */
+
+.about-section {
+    padding: 100px;
+}
+
+.about-section img {
+    height: 450px;
+    width: 600px;
+    margin-top: 60px;
+    border-radius: 40px;
+}
+
+.about-section img:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+.about-section .text-content h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #FFA500;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.about-section .text-content h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: #1c456d;
+}
+
+.about-section .text-content p {
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: 30px;
+    color: #555;
+}
+
+.about-section .text-content button {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    background-color: #2B547E;
+    height: 50px;
+    width: 170px;
+    text-transform: capitalize;
+}
+
+.about-section .text-content button:hover {
+    background-color: #fff;
+    border: 2px solid #2B547E;
+    color: #2B547E;
+}
+
+/* project section  */
+
+.project-section {
+    background: linear-gradient(to right, #a640b4,#da2958);
+    padding: 90px;
+    /* height: 100vh; */
+}
+
+.project-section .text h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #FFA500;
+    font-weight: 600;
+}
+
+.project-section .text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.project-section hr {
+    height: 2px;
+    background-color: #f1f1f1;
+    border: none;
+}
+
+.project-section .text p {
+    font-size: 18px;
+    color: #d1d1d1;
+}
+
+.project-section .project .card {
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 30px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.project-section .project .card:hover {
+    transform: scale(1.2);
+}
+
+.project-section .project .card h4 {
+    font-size: 20px;
+    color: #1c456d;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.project-section .project .card p {
+    font-size: 15px;
+    color: #555;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.project-section .project .card button {
+    margin-top: 10px;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #a640b4,#da2958);
+    height: 40px;
+    width: 120px;
+    text-transform: capitalize;
+}
+
+.project-section .project .card button:hover {
+    background: #f0f0f0;
+    border: 2px solid #a640b4;
+    color: #a640b4;
+}
+
+/* contact section  */
+
+.contact-section {
+    background: #fbfbfb;
+    padding: 100px;
+}
+
+.contact-section h1 {
+    margin-top: 50px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 50px;
+    font-weight: bold;
+    color: #1c456d;
+    margin-bottom: 100px;
+}
+
+.contact-section .info-box {
+    background-color: transparent;
+    border: none;
+    height: 200px;
+    width: 230px;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-section .info-box .bi {
+    background: linear-gradient(to right, #a640b4,#da2958);
+    border-radius: 55%;
+    padding: 15px 18px;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+}
+
+.contact-section .info-box h3 {
+    font-size: 25px;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.contact-section .info-box p {
+    font-size: 15px;
+    color: #777;
+}
+
+.contact-section .info-box:hover {
+    background: linear-gradient(to right, #a640b4,#da2958);
+    color: #fff;
+    transform: scale(0.9);
+}
+
+.contact-section .info-box:hover p {
+    color: #f1f1f1;
+}
+
+.contact-section .info-box:hover .bi {
+    background: #fff;
+    color: #a640b4;
+    font-size: 25px;
+    text-align: center;
+}
+
+.contact-section .form {
+    margin-top: 50px;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    margin-top: 10px;
+    border: none;
+    background: #f1f1f1;
+    color: #1c456d;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contact-section form button {
+    margin-top: 20px;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #a640b4,#da2958);
+    height: 50px;
+    width: 170px;
+    text-transform: capitalize;
+}
+
+.contact-section form button:hover {
+    background-color: #fff;
+    border: 2px solid #088F8F;
+    color: #088F8F;
+}
+
+/* footer section  */
+
+footer {
+    padding: 40px;
+    background: linear-gradient(to right, #a640b4,#da2958);
+}
+
+footer .logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+footer .logo i {
+    font-size: 25px;
+    background: #FFA500;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+footer ul li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #d1d1d1;
+    margin-left: 30px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+footer ul li a:hover {
+    color: #FFA500;
+}
+
+footer p {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+.back-to-top {
+    background: #FFA500;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 50px;
+}
+
+@media (max-width:700px) {
+
+    .hero-section img {
+        height: 350px;
+        margin-top: 50px;
+    }
+
+    .services-section .services .card {
+        margin-bottom: 50px;
+    }
+
+    .services-section .services .row1 {
+        margin-bottom: 0px;
+    }
+
+    .about-section{
+        padding: 50px 30px;
+    }
+    .about-section img {
+        height: 300px;
+    }
+
+    .contact-section{
+        padding: 50px;
+    }
+
+    footer ul li a {
+        margin-left: 5px;
+        letter-spacing: 0;
+    }
+}
+.three{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:370px;
+}
+
+
+
+   </style>
+</head>
+
+<body>
+
+    <!-- navbar section   -->
+
+    <header class="navbar-section">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-graph-up"></i> Forge & Flow</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#about">Goal achievement</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Investment options</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Investment strategies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- hero section  -->
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 text-content">
+                    <h1>Financial service you really want</h1>
+                    <p>We build effective strategies to help you maintain budget and invest your savings.
+                    </p>
+                    
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <img src="{{url_for('static',filename='images/hero-image.png')}}" alt="Image" class="img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- services section  -->
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-12 col-sm-12 services">
+
+                    <div class="row row1">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card" onClick="redirectToPage()">
+                                
+                                <img src="{{url_for('static',filename='images/research.png')}}" alt="Image" class="img-fluid">
+                                <div class="card-body">
+                                    <h4 class="card-title">Budget Planner</h4>
+                                    <p class="card-text">We build effective graphs & Bars to help in managing the expenses.</p>
+                                </div>
+                                <script>
+                                    function redirectToPage(){
+                                        window.location.href="dashboard"
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card" onClick="redirectToPage2()">
+                                
+                                <img src="{{url_for('static',filename='images/brand.png')}}" alt="Image" class="img-fluid">
+                                <div class="card-body">
+                                    <h4 class="card-title">Savings</h4>
+                                    <p class="card-text">Saving and Goal chart </p>
+                                </div>
+                                <script>
+                                    function redirectToPage2(){
+                                        window.location.href="invest"
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row row2">
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card" onClick="redirectToPage3()">
+                                
+                                <img src="{{url_for('static',filename='images/ux.png')}}" alt="Image" class="img-fluid">
+                                <div class="card-body">
+                                    <h4 class="card-title">Invest Savings</h4>
+                                    <p class="card-text">helps users allocate a portion of their income toward various investment options</p>
+                                </div>
+                                <script>
+                                    function redirectToPage3(){
+                                        window.location.href="page3fin"
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card"  onClick="redirectToPage5()">
+                                
+                                <img src="{{url_for('static',filename='images/app-development.png')}}" alt="Image" class="img-fluid">
+                                <div class="card-body">
+                                    <h4 class="card-title">Personalised Investment Recommendations</h4>
+                                    <p class="card-text">Get smart AI Recommendations</p>
+                                </div>
+                                <script>
+                                    function redirectToPage5(){
+                                        window.location.href="questions"
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12 text-content">
+                    <h3>services</h3>
+                    <h1 style="background: linear-gradient(to right, #a640b4,#da2958); color: transparent;-webkit-background-clip:text;">We can help you solve your problem through our service.</h1>
+                    <p>Track income and expenses effortlessly.
+                        Create customized budgets to align with personal goals.
+                        Receive real-time spending alerts to stay on track.</p>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- about section  -->
+
+    <!-- <section class="about-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    
+                     <img src="{{url_for('static',filename='images/about.jpg')}}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 text-content">
+                    <h3>who we are</h3>
+                    <h1>Providing creative and technology services for growing brands.</h1>
+
+                    <p>Our company specializes in research, brand identity design, UI/UX design, development and graphic
+                        design. To help our clients improve their business, we work with them all over the world.</p>
+                    <button>learn more</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- project section  -->
+    <section class="project-section" id="projects">
+        <div class="container">
+            <div class="row text">
+                <div class="col-lg-6 col-md-12">
+                    <h3>Stay Updated</h3>
+                    <h1>Various Investment Options available</h1>
+                    <hr>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <p>"We build financial solutions with passion, turning your financial goals into reality and ensuring a successful journey with exceptional guidance."</p>
+                </div>
+            </div>
+            <div class="row project">
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text">
+                                <h4 class="card-title">Stocks</h4>
+                                <p class="card-text">13% returns YOY</p>
+                                <button><a href="Stocks" style="text-decoration: none; color: black;">know more</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        
+                        <div class="card-body">
+                            <div class="text">
+                                <h4 class="card-title">Bonds</h4>
+                                <p class="card-text">7% returns YOY</p>
+                                <button><a href="Bonds"  style="text-decoration: none; color: black;">Know more</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                       
+                        <div class="card-body">
+                            <div class="text">
+                                <h4 class="card-title">Government Schemes</h4>
+                                <p class="card-text">8% returns YOY</p>
+                                <button><a href="govern"  style="text-decoration: none; color: black;">Know more</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text">
+                                <h4 class="card-title">Banking</h4>
+                                <p class="card-text">6% returns YOY</p>
+                                <button><a href="bank"  style="text-decoration: none; color: black;">Know more</a></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- contact section  -->
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+
+            <div class="row gy-4">
+
+
+                <h1 style="background: linear-gradient(to right, #a640b4,#da2958); color: transparent;-webkit-background-clip:text;">Investment strategies</h1>
+                <div class="col-lg-6">
+
+                    <div class="row gy-4">
+                        <div class="three">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                
+                                <h3 onClick="redirectToPage6()">Canslim Stratergy</h3>
+                                <p>"Stock growth strategy evaluation."</p>
+                            </div>
+                            <script>
+                                function redirectToPage6(){
+                                    window.location.href="page6"
+                                }
+                            </script>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h3 onClick="redirectToPage7()">Raam doe Stratergy</h3>
+                                <p>"Stock selection strategy framework."</p>
+                            </div>
+                            <script>
+                                function redirectToPage7(){
+                                    window.location.href="page7"
+                                }
+                            </script>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h3 onClick="redirectToPage8()">Deep Value Stratergy</h3>
+                                <p>"Undervalued stocks, intrinsic value focus."</p>
+                            </div>
+                            <script>
+                                function redirectToPage8(){
+                                    window.location.href="page8"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                        <div class="three">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h3 onClick="redirectToPage9()">Peter Lynch's Stratergy</h3>
+                                <p>"Invest in what you know."</p>
+                            </div>
+                            <script>
+                                function redirectToPage9(){
+                                    window.location.href="page9"
+                                }
+                            </script>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h3 onClick="redirectToPage10()">Warren's Stratergy</h3>
+                                <p>"Invest in strong, undervalued companies."</p>
+                            </div>
+                            <script>
+                                function redirectToPage10(){
+                                    window.location.href="page10"
+                                }
+                            </script>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h3 onClick="redirectToPage11()">Momentum Stratergy</h3>
+                                <p>"
+                                    Buy rising stocks, sell on peaks."</p>
+                            </div>
+                            <script>
+                                function redirectToPage11(){
+                                    window.location.href="page11"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+               
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- footer section  -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <p class="logo"><i class="bi bi-graph-up"></i>  Forge&Flow</p>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <ul class="d-flex">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">services</a></li>
+                        <li><a href="#">models</a></li>
+                        <li><a href="#">strategies</a></li>
+                        <li><a href="#">Home</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-12 col-sm-12">
+                    <p>&copy;2025_Forge&Flow</p>
+                </div>
+
+                <div class="col-lg-1 col-md-12 col-sm-12">
+                    <!-- back to top  -->
+
+                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                            class="bi bi-arrow-up-short"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

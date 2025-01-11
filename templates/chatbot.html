@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge & Flow Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #e0e0e0;
+        }
+        
+        .chat-container {
+            width: 1200px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 85vh;
+        }
+        
+        .chat-header {
+            background-color: #3a3a3a;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .chat-header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .message-content {
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 70%;
+        }
+        
+        .user-message {
+            flex-direction: row-reverse;
+        }
+        
+        .user-message .message-content {
+            background-color: #4a90e2;
+            margin-right: 10px;
+        }
+        
+        .bot-message .message-content {
+            background-color: #3a3a3a;
+            margin-left: 10px;
+        }
+        
+        .profile-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .chat-input-container {
+            display: flex;
+            padding: 15px;
+            background-color: #2a2a2a;
+        }
+        
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #4a4a4a;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #3a3a3a;
+            color: #e0e0e0;
+            outline: none;
+        }
+        
+        #send-button {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        #send-button:hover {
+            background-color: #3a7bc8;
+        }
+        
+        #send-button:disabled {
+            background-color: #2a5a8a;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 480px) {
+            .chat-container {
+                height: 100vh;
+                border-radius: 0;
+            }
+        }
+        
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4a4a4a;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a5a5a;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Forge & Flow Chatbot</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script>
+        const API_KEY = 'AIzaSyB1CuJ6dINoFpqFn1dBChaXaHOV_nIdRkU'; 
+        // Replace with your actual Gemini API key.
+    
+        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
+        // The base URL of the Gemini API used to generate content.
+    
+        const chatMessages = document.getElementById('chat-messages');
+        // Gets the DOM element where chat messages will be displayed.
+    
+        const sendButton = document.getElementById('send-button');
+        // Button that sends the user input.
+    
+        async function generateResponse(prompt) {
+            // Sends a request to the Gemini API to generate content based on the user input (prompt).
+            const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contents: [
+                        {
+                            parts: [
+                                {
+                                    text: prompt
+                                }
+                            ]
+                        }
+                    ]
+                })
+            });
+    
+            if (!response.ok) {
+                throw new Error('Failed to generate response');
+            }
+    
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text;
+        }
+    
+        function cleanMarkdown(text) {
+            // Cleans any markdown formatting from the response.
+            return text
+                .replace(/#{1,6}\s?/g, '')
+                .replace(/\*\*/g, '')
+                .replace(/\n{3,}/g, '\n\n')
+                .trim();
+        }
+    
+        function addMessage(message, isUser) {
+            // Adds a new message to the chat.
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+    
+            const profileImage = document.createElement('img');
+            profileImage.classList.add('profile-image');
+            profileImage.src = isUser ? 'user.jpg' : 'bot.jpg';
+            profileImage.alt = isUser ? 'User' : 'Bot';
+    
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
+            messageContent.textContent = message;
+    
+            messageElement.appendChild(profileImage);
+            messageElement.appendChild(messageContent);
+    
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    
+        async function handleUserInput() {
+            // Handles the user input, sends the request to the chatbot and displays the response.
+            const userMessage = document.getElementById('user-input').value.trim();
+    
+            if (userMessage) {
+                addMessage(userMessage, true);
+                document.getElementById('user-input').value = '';
+                sendButton.disabled = true;
+    
+                try {
+                    const botMessage = await generateResponse(userMessage);
+                    addMessage(cleanMarkdown(botMessage), false);
+                } catch (error) {
+                    console.error('Error:', error);
+                    addMessage('Sorry, I encountered an error. Please try again.', false);
+                } finally {
+                    sendButton.disabled = false;
+                    document.getElementById('user-input').focus();
+                }
+            }
+        }
+    
+        sendButton.addEventListener('click', handleUserInput);
+    
+        document.getElementById('user-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleUserInput();
+            }
+        });
+    
+        window.onload = function() {
+            // When the chatbot page loads, retrieve the investment data from localStorage and pass it to the chatbot.
+            const investmentData = localStorage.getItem("investedData");
+    
+            if (investmentData) {
+                // Add the user's investment data as the first message from the bot
+                addMessage("I see that you have shared your investment data.", false);
+    
+                // Optionally, send this data to the chatbot model to get a recommendation
+                generateResponse(investmentData).then(botMessage => {
+                    addMessage(cleanMarkdown(botMessage), false);
+                }).catch(error => {
+                    console.error('Error during investment data response:', error);
+                    addMessage("Sorry, I couldn't process your investment data at this moment.", false);
+                });
+            } else {
+                addMessage("Welcome! Please share your investment details.", false);
+            }
+        };
+    </script>
+    
+</body>
+</html>

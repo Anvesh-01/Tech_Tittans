@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Ensures padding and border are included in element's total width and height */
+            font-family: 'Poppins';
+        }
+
+        html,
+        body {
+            height: 100%;
+            /* Ensure full height */
+        }
+
+        .header {
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            width: 100%;
+            height: 100vh;
+            /* Full height of the viewport */
+            position: relative;
+            /* Positioning for child elements */
+        }
+
+        #result {
+            position: relative;
+            /* Ensure result is positioned correctly over background */
+            z-index: 10;
+            /* Bring result text above background */
+            color: white;
+            /* Change text color for visibility */
+        }
+
+
+
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* Ensure the header covers the full viewport */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 110vh;
+            /* Full height of viewport */
+            position: relative;
+            overflow: hidden;
+            /* Hide any overflow to prevent visibility of excess content */
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #result {
+            position: relative;
+            z-index: 10;
+            /* Keep the result above the animated background */
+            color: white;
+        }
+
+        /* For cases where finisher-header affects background */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Ensure canvas covers the full area */
+        }
+
+        #result {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 200px;
+        }
+        #result {
+            position: relative;
+            z-index: 10;
+            color: white;
+            font-size: 16px; /* Adjust font size for better readability */
+            font-weight: 500;
+            margin-bottom: 50px;
+            padding: 20px; /* Add padding around the table */
+            background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background for better contrast */
+            border-radius: 10px; /* Optional: Round the edges */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+            overflow-x: auto; /* Add horizontal scroll for small screens */
+        }
+        
+        #result table {
+            width: 100%; /* Ensure the table takes up the full width of its container */
+            border-collapse: collapse; /* Collapse borders for a cleaner look */
+        }
+        
+        #result table, 
+        #result th, 
+        #result td {
+            border: 1px solid black; /* Set a black border for table and cells */
+        }
+        
+        #result th, 
+        #result td {
+            padding: 10px; /* Add padding inside table cells */
+            text-align: left; /* Align text to the left for readability */
+            color: white; /* Ensure text remains visible */
+        }
+        #he {
+            color: white;
+            font-size: 48px; /* Adjust font size as needed */
+            font-weight: 700; /* Bold text */
+            padding: 20px; /* Add padding around the heading */
+            text-align: center; /* Center the text */
+            margin-bottom: 50px; /* Space below the heading */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header finisher-header">
+        <h1 id="he">Momentum Stratergy</h1>
+        <div id="result">
+            
+            <table border=1px solid black>
+                <tr>
+                    <td>S.No.</td>
+                    <td>Name</td>
+                    <td>CMP Rs.</td>
+                    <td>P/E</td>
+                    <td>Mar Cap Rs.Cr.</td>
+                    <td>NP Qtr Rs.Cr.</td>
+                    <td>Qtr Profit Var %</td>
+                    <td>Sales Qtr Rs.Cr.</td>
+                    <td>Qtr Sales Var %</td>
+                    <td>ROCE % </td>
+                    <td>CMP / BV</td>
+                    <td>Profit Var 5Yrs %</td>
+                    <td>RSI</td>
+                    <td>6mth return %</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bridge Securitie</td>
+                    <td>11.98</td>
+                    <td>31.26</td>
+                    <td>46.58</td>
+                    <td>1</td>
+                    <td>9900</td>
+                    <td>1.05</td>
+                    <td>600</td>
+                    <td>98.55</td>
+                    <td>20.34</td>
+                    <td>94.73</td>
+                    <td>79.26</td>
+                    <td>157.63</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lloyds Metals</td>
+                    <td>1449.65</td>
+                    <td>51.6</td>
+                    <td>75726.1</td>
+                    <td>301.44</td>
+                    <td>30.35</td>
+                    <td>1364.43</td>
+                    <td>25.03</td>
+                    <td>78.27</td>
+                    <td>13.1</td>
+                    <td>129.25</td>
+                    <td>78.07</td>
+                    <td>93.96</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Bhudevi Infra</td>
+                    <td>125.8</td>
+                    <td>31.9</td>
+                    <td>57.73</td>
+                    <td>-0.23</td>
+                    <td>80.99</td>
+                    <td>0</td>
+                    <td></td>
+                    <td>67.95</td>
+                    <td>251.01</td>
+                    <td>67.98</td>
+                    <td>100</td>
+                    <td>213.79</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Shukra Pharma.</td>
+                    <td>184.45</td>
+                    <td>55.93</td>
+                    <td>807.66</td>
+                    <td>0.54</td>
+                    <td>-88.54</td>
+                    <td>5.56</td>
+                    <td>-77.44</td>
+                    <td>44.25</td>
+                    <td>14.88</td>
+                    <td>109.45</td>
+                    <td>96.12</td>
+                    <td>102.14</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Indo Thai Sec.</td>
+                    <td>1731.35</td>
+                    <td>99.83</td>
+                    <td>1736.04</td>
+                    <td>4.53</td>
+                    <td>4.38</td>
+                    <td>9.32</td>
+                    <td>9.65</td>
+                    <td>28.22</td>
+                    <td>18.72</td>
+                    <td>68.76</td>
+                    <td>92.37</td>
+                    <td>529.7</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Sita Enterprises</td>
+                    <td>179.25</td>
+                    <td>22.79</td>
+                    <td>53.78</td>
+                    <td>0.2</td>
+                    <td>-83.33</td>
+                    <td>0.31</td>
+                    <td>-75.97</td>
+                    <td>22.86</td>
+                    <td>3.43</td>
+                    <td>99.16</td>
+                    <td>93.11</td>
+                    <td>233.8</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Hi-Green Carbon</td>
+                    <td>305.5</td>
+                    <td>73.41</td>
+                    <td>763.45</td>
+                    <td>5.31</td>
+                    <td></td>
+                    <td>36.09</td>
+                    <td>7.99</td>
+                    <td>21.94</td>
+                    <td>9.45</td>
+                    <td>52.17</td>
+                    <td>73.95</td>
+                    <td>75.88</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>ARCL Organics</td>
+                    <td>312</td>
+                    <td>18.1</td>
+                    <td>249.6</td>
+                    <td>2.18</td>
+                    <td>74.4</td>
+                    <td>56.46</td>
+                    <td>30.54</td>
+                    <td>20.94</td>
+                    <td>3.54</td>
+                    <td>59.06</td>
+                    <td>77.01</td>
+                    <td>334</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Omfurn India</td>
+                    <td>109.8</td>
+                    <td>31.3</td>
+                    <td>129.28</td>
+                    <td>3.4</td>
+                    <td></td>
+                    <td>40.39</td>
+                    <td>-8.58</td>
+                    <td>13.48</td>
+                    <td>2.32</td>
+                    <td>94.83</td>
+                    <td>71.76</td>
+                    <td>56.97</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Rajas. Tube Mfg</td>
+                    <td>100.98</td>
+                    <td></td>
+                    <td>45.54</td>
+                    <td>-0.42</td>
+                    <td>-300</td>
+                    <td>6.37</td>
+                    <td>-73.58</td>
+                    <td>10.63</td>
+                    <td>5.73</td>
+                    <td>70</td>
+                    <td>91.41</td>
+                    <td>226.48</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Espire Hospi</td>
+                    <td>361.5</td>
+                    <td>184.16</td>
+                    <td>488.03</td>
+                    <td>0.96</td>
+                    <td>380</td>
+                    <td>20.3</td>
+                    <td>317.7</td>
+                    <td>10.44</td>
+                    <td>112.97</td>
+                    <td>107.61</td>
+                    <td>83.18</td>
+                    <td>280.85</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Colab Cloud</td>
+                    <td>32.74</td>
+                    <td>170.38</td>
+                    <td>333.95</td>
+                    <td>0.53</td>
+                    <td>10.42</td>
+                    <td>14.17</td>
+                    <td>7772.22</td>
+                    <td>8.64</td>
+                    <td>14.72</td>
+                    <td>86.19</td>
+                    <td>74.28</td>
+                    <td>122.72</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Dipna Pharmachem</td>
+                    <td>14.83</td>
+                    <td>42.96</td>
+                    <td>35.66</td>
+                    <td>0.34</td>
+                    <td></td>
+                    <td>90.62</td>
+                    <td>22.16</td>
+                    <td>7.05</td>
+                    <td>0.94</td>
+                    <td>105.15</td>
+                    <td>76.71</td>
+                    <td>86.07</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Subhash Silk</td>
+                    <td>85.61</td>
+                    <td></td>
+                    <td>36.3</td>
+                    <td>-0.11</td>
+                    <td>-168.75</td>
+                    <td>0.01</td>
+                    <td></td>
+                    <td>7.02</td>
+                    <td>3.45</td>
+                    <td>114.11</td>
+                    <td>99.24</td>
+                    <td>248.72</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Chandrima Mercan</td>
+                    <td>98.79</td>
+                    <td>69.44</td>
+                    <td>219.43</td>
+                    <td>0.68</td>
+                    <td>666.67</td>
+                    <td>8.09</td>
+                    <td>300.5</td>
+                    <td>6.19</td>
+                    <td>2.4</td>
+                    <td>179.31</td>
+                    <td>86.29</td>
+                    <td>290.17</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Naturite Agro</td>
+                    <td>150</td>
+                    <td>50.28</td>
+                    <td>79.44</td>
+                    <td>-1.53</td>
+                    <td>-10.07</td>
+                    <td>0.9</td>
+                    <td>-80.73</td>
+                    <td>2.14</td>
+                    <td>6.77</td>
+                    <td>54.31</td>
+                    <td>83.21</td>
+                    <td>79.1</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Aayush Art</td>
+                    <td>719.95</td>
+                    <td>2624.77</td>
+                    <td>1102.4</td>
+                    <td>0.24</td>
+                    <td>700</td>
+                    <td>26.58</td>
+                    <td>271.23</td>
+                    <td>1.33</td>
+                    <td>19.52</td>
+                    <td>91.86</td>
+                    <td>91.43</td>
+                    <td>486.28</td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="Clicked()" style="text-align: center; width: 250px; height: 50px; border-radius: 10px;
+        font-size: larger; font-weight: 500; cursor: pointer;">Back to Homepage</button>
+    </div>
+
+    <script >
+        "use strict";var _cc=function(){function t(t,i){for(var s=0;s<i.length;s++){var e=i[s];e.enumerable=e.enumerable||!1,e.configurable=!0,"value"in e&&(e.writable=!0),Object.defineProperty(t,e.key,e)}}return function(i,s,e){return s&&t(i.prototype,s),e&&t(i,e),i}}();function _ccc(t,i){if(!(t instanceof i))throw new TypeError("Cannot call a class as a function")}!function(t){function i(t,i){var s=Math.tan(.017453*Math.abs(t));return Math.ceil(i*s)}function s(t){var i=void 0;return/^#([A-Fa-f0-9]{3}){1,2}$/.test(t)?(3===(i=t.substring(1).split("")).length&&(i=[i[0],i[0],i[1],i[1],i[2],i[2]]),{r:(i="0x"+i.join(""))>>16&255,g:i>>8&255,b:255&i}):{r:0,g:0,b:0}}var e=function(){function t(i,e,h){_ccc(this,t),this.o=h,this.r=s(i),this.d=this.grd(),this.h=this.grs(),this.s=Math.abs(this.gnfr(this.o.size)),this.srpgq(e),this.vx=this.gnfr(this.o.speed.x)*this.grd(),this.vy=this.gnfr(this.o.speed.y)*this.grd()}return _cc(t,[{key:"srpgq",value:function(t){var i=this.srpiq();return 3===t?(this.x=i.x+i.halfWidth,void(this.y=i.y)):2===t?(this.x=i.x,void(this.y=i.y+i.halfHeight)):1===t?(this.x=i.x+i.halfWidth,void(this.y=i.y+i.halfHeight)):(this.x=i.x,void(this.y=i.y))}},{key:"srpiq",value:function(){var t=this.o.c.w/2,i=this.o.c.h/2;return{x:Math.random()*t,y:Math.random()*i,halfHeight:i,halfWidth:t}}},{key:"gnfr",value:function(t){if(t.min===t.max)return t.min;var i=t.max-t.min;return Math.random()*i+t.min}},{key:"grd",value:function(){return Math.random()>.5?1:-1}},{key:"grs",value:function(){return this.o.shapes[Math.floor(Math.random()*this.o.shapes.length)]}},{key:"gr",value:function(t,i){return"rgba("+t.r+", "+t.g+", "+t.b+", "+i+")"}},{key:"an",value:function(t,s,e){this.o.size.pulse&&(this.s+=this.o.size.pulse*this.d,(this.s>this.o.size.max||this.s<this.o.size.min)&&(this.d*=-1),this.s=Math.abs(this.s)),this.x+=this.vx,this.y+=this.vy,this.x<0?(this.vx*=-1,this.x+=1):this.x>s&&(this.vx*=-1,this.x-=1),this.y<0?(this.vy*=-1,this.y+=1):this.y>e&&(this.vy*=-1,this.y-=1),t.beginPath(),this.o.blending&&"none"!==this.o.blending&&(t.globalCompositeOperation=this.o.blending);var h=this.gr(this.r,this.o.opacity.center),a=this.gr(this.r,this.o.opacity.edge),n="c"===this.h?this.s/2:"t"===this.h?.577*this.s:"s"===this.h?.707*this.s:this.s,o=t.createRadialGradient(this.x,this.y,.01,this.x,this.y,n);o.addColorStop(0,h),o.addColorStop(1,a),t.fillStyle=o;var r=Math.abs(this.s/2);if("c"===this.h&&t.arc(this.x,this.y,r,0,6.283185,!1),"s"===this.h){var c=this.x-r,l=this.x+r,u=this.y-r,d=this.y+r;t.moveTo(c,d),t.lineTo(l,d),t.lineTo(l,u),t.lineTo(c,u)}if("t"===this.h){var v=i(30,r),g=this.y+v;t.moveTo(this.x-r,g),t.lineTo(this.x+r,g),t.lineTo(this.x,this.y-2*v)}t.closePath(),t.fill()}}]),t}(),h=function(){function h(i){var s=this;_ccc(this,h),this.c=document.createElement("canvas"),this.x=this.c.getContext("2d"),this.c.setAttribute("id","finisher-canvas"),this.gr(i.className).appendChild(this.c);var e=void 0;t.addEventListener("resize",(function(){clearTimeout(e),e=setTimeout(s.resize.bind(s),150)}),!1),this.init(i),t.requestAnimationFrame(this.an.bind(this))}return _cc(h,[{key:"gr",value:function(t){var i=document.getElementsByClassName(t||"finisher-header");if(!i.length)throw new Error("No .finisher-header element found");return i[0]}},{key:"resize",value:function(){var t=this.gr(this.o.className);this.o.c={w:t.clientWidth,h:t.clientHeight},this.c.width=this.o.c.w,this.c.height=this.o.c.h;var s=i(this.o.skew,this.o.c.w/2),e="skewY("+this.o.skew+"deg) translateY(-"+s+"px)";this.c.setAttribute("style","position:absolute;z-index:-1;top:0;left:0;right:0;bottom:0;-webkit-transform:"+e+";transform:"+e+";outline: 1px solid transparent;background-color:rgba("+this.bc.r+","+this.bc.g+","+this.bc.b+",1);")}},{key:"init",value:function(t){this.o=t,this.bc=s(this.o.colors.background),this.ps=[],this.resize(),this.cp()}},{key:"cp",value:function(){var i=0;this.ps=[],this.o.ac=t.innerWidth<600&&this.o.count>5?Math.round(this.o.count/2):this.o.count;for(var s=0;s<this.o.ac;s++){var h=s%4,a=new e(this.o.colors.particles[i],h,this.o);++i>=this.o.colors.particles.length&&(i=0),this.ps[s]=a}}},{key:"an",value:function(){t.requestAnimationFrame(this.an.bind(this)),this.x.clearRect(0,0,this.o.c.w,this.o.c.h);for(var i=0;i<this.o.ac;i++){this.ps[i].an(this.x,this.o.c.w,this.o.c.h)}}}]),h}();t.FinisherHeader=h}(window);
+
+    </script>
+    <script>
+        function Clicked() {
+            window.location.href = "index";
+        }
+        // Ensure the FinisherHeader covers the full viewport
+        new FinisherHeader({
+            "count": 5,
+            "size": {
+                "min": 1300,
+                "max": 1500,
+                "pulse": 0
+            },
+            "speed": {
+                "x": {
+                    "min": 0.1,
+                    "max": 1
+                },
+                "y": {
+                    "min": 0.1,
+                    "max": 0.6
+                }
+            },
+            "colors": {
+                "background": "#944dd7",
+                "particles": [
+                    "#ff4848",
+                    "#000000",
+                    "#2235e5",
+                    "#000000",
+                    "#ff0000"
+                ]
+            },
+            "blending": "overlay",
+            "opacity": {
+                "center": 0.5,
+                "edge": 0.05
+            },
+            "skew": -2,
+            "shapes": [
+                "c"
+            ]
+        });
+
+        
+    </script>
+</body>
+
+</html>
